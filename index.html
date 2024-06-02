@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Excel to JSON Converter</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .upload-button, .action-button {
+      border: none;
+      background-color: #4CAF50;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 8px;
+      transition: background-color 0.3s ease;
+    }
+
+    .upload-button:hover, .action-button:hover {
+      background-color: #45a049;
+    }
+
+    .upload-button:active, .action-button:active {
+      background-color: #3e8e41;
+    }
+
+    #excelFileInput {
+      display: none;
+    }
+
+    #convertButton, #downloadButton {
+      display: none;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <label for="excelFileInput" id="uploadButton" class="upload-button">Upload Excel File</label>
+  <input type="file" id="excelFileInput" accept=".xlsx,.xls">
+  <div id="output"></div>
+  <button id="convertButton" class="upload-button">Convert to JSON</button>
+  <button id="downloadButton" class="upload-button">Download JSON</button>
+
+  <script src="renderer.js"></script>
+</body>
+</html>

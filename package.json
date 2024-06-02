@@ -1,0 +1,17 @@
+{
+  "scripts": {
+    "start": "electron ."
+  },
+  "dependencies": {
+    "electron": "^30.0.9",
+    "xlsx": "^0.18.5"
+  },
+  "name": "filesaver",
+  "version": "1.0.0",
+  "main": "main.js",
+  "devDependencies": {},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
