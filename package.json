@@ -6,12 +6,12 @@
     "electron": "^30.0.9",
     "xlsx": "^0.18.5"
   },
-  "name": "filesaver",
+  "name": "converter",
   "version": "1.0.0",
   "main": "main.js",
   "devDependencies": {},
   "keywords": [],
-  "author": "",
+  "author": "Oefen",
   "license": "ISC",
   "description": ""
 }
