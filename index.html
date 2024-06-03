@@ -8,15 +8,47 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      flex-direction: column;
       height: 100vh;
       margin: 0;
+      background-color: #121212;
+      color: #ffffff;
     }
-
-    .upload-button, .action-button {
+    .close-button {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      width: 30px;
+      height: 30px;
+      background-color: #ff0000;
       border: none;
-      background-color: #4CAF50;
+      cursor: pointer;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 20px;
+      color: #ffffff;
+    }
+    .close-button:hover {
+      background-color: #ff3333;
+    }
+    .header-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .header {
+      font-size: 36px;
+      margin-top: 10px;
+      margin-bottom: 20px;
+      text-shadow: 0 0 5px #fff, 0 0 10px #00ffff, 0 0 15px #00ffff, 0 0 20px #00ffff;
+      color: #ffffff;
+    }
+    .button {
+      border: none;
       color: white;
-      padding: 20px;
+      padding: 15px 32px;
       text-align: center;
       text-decoration: none;
       display: inline-block;
@@ -24,33 +56,82 @@
       cursor: pointer;
       border-radius: 8px;
       transition: background-color 0.3s ease;
+      margin-top: 10px;
     }
-
-    .upload-button:hover, .action-button:hover {
+    .blue-button {
+      background-color: #007BFF;
+    }
+    .blue-button:hover {
+      background-color: #0056b3;
+    }
+    .blue-button:active {
+      background-color: #004494;
+    }
+    .green-button {
+      background-color: #4CAF50;
+    }
+    .green-button:hover {
       background-color: #45a049;
     }
-
-    .upload-button:active, .action-button:active {
+    .green-button:active {
       background-color: #3e8e41;
     }
-
     #excelFileInput {
       display: none;
     }
-
-    #convertButton, #downloadButton {
+    #fileNameDisplay {
+      margin-top: 10px;
+      margin-bottom: 10px;
+      padding: 10px;
+      background-color: #1e1e1e;
+      border-radius: 5px;
+      width: 80%;
+      text-align: center;
       display: none;
-      margin-top: 20px;
+    }
+    #fileNameTitle {
+      font-size: 16px;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+    #fileName {
+      font-size: 14px;
+      color: #bbbbbb;
+    }
+    #convertButton {
+      display: none;
+    }
+    #downloadButton {
+      display: none;
+    }
+    .logo {
+      border-radius: 50%;
+      width: 100px;
+      height: 100px;
     }
   </style>
 </head>
 <body>
-  <label for="excelFileInput" id="uploadButton" class="upload-button">Upload Excel File</label>
-  <input type="file" id="excelFileInput" accept=".xlsx,.xls">
+  <div class="header-container">
+    <img src="logo.gif" alt="Logo" class="logo">
+    <div class="header">TPA Excel Converter</div>
+  </div>
+  <label for="excelFileInput" id="uploadButton" class="button blue-button">Upload Excel File</label>
+  <input type="file" id="excelFileInput" accept=".xlsx,.xls,.xlsm">
+  <div id="fileNameDisplay">
+    <div id="fileNameTitle">Selected File</div>
+    <div id="fileName"></div>
+  </div>
   <div id="output"></div>
-  <button id="convertButton" class="upload-button">Convert to JSON</button>
-  <button id="downloadButton" class="upload-button">Download JSON</button>
+  <button id="convertButton" class="button green-button">Convert to JSON</button>
+  <button id="downloadButton" class="button blue-button">Download JSON</button>
+  <button class="close-button" onclick="closeWindow()">X</button>
 
   <script src="renderer.js"></script>
+  <script>
+    function closeWindow() {
+      window.close();
+    }
+  </script>
 </body>
 </html>
