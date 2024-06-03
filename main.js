@@ -2,16 +2,19 @@ const { app, BrowserWindow, ipcMain, dialog } = require('electron');
 const path = require('path');
 const fs = require('fs');
 
+let mainWindow;
+
 function createWindow() {
-  const mainWindow = new BrowserWindow({
+  mainWindow = new BrowserWindow({
     width: 800,
     height: 600,
+    frame: false,
     webPreferences: {
       nodeIntegration: true,
       contextIsolation: false
     }
   });
-
+  mainWindow.maximize();
   mainWindow.loadFile('index.html');
 }
 
@@ -28,7 +31,7 @@ ipcMain.on('saveJsonFile', (event, jsonData) => {
   if (filePath) {
     try {
       fs.writeFileSync(filePath, jsonDataString);
-      dialog.showMessageBox({
+      dialog.showMessageBoxSync({
         type: 'info',
         title: 'Success',
         message: 'JSON file saved successfully!'
