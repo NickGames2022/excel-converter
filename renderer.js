@@ -30,7 +30,7 @@ document.getElementById('convertButton').addEventListener('click', () => {
 
   const convertButton = document.getElementById('convertButton');
   convertButton.innerText = 'Converting...';
-  convertButton.disabled = true; // Disable the button during conversion
+  convertButton.disabled = true;
 
   const animationFrames = ['Converting', 'Converting.', 'Converting..', 'Converting...'];
   let frameIndex = 0;
